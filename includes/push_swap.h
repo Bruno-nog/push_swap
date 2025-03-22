@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 16:09:15 by brunogue          #+#    #+#             */
-/*   Updated: 2025/03/20 17:56:56 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/03/22 17:32:02 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define PUSH_SWAP_H
 
 # include "../libft/libft.h"
+# include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 typedef struct s_stack_node
 {
@@ -21,3 +24,5 @@ typedef struct s_stack_node
 	struct s_stack	*next;
 	struct s_stack	*prev;
 }	t_stack;
+
+#endif
