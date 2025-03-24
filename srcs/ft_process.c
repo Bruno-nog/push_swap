@@ -6,13 +6,11 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/22 17:59:32 by brunogue          #+#    #+#             */
-/*   Updated: 2025/03/23 19:17:06 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/03/24 13:00:05 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-
 
 t_stack	*ft_subprocess(char **av)
 {

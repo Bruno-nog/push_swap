@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 19:02:39 by brunogue          #+#    #+#             */
-/*   Updated: 2025/03/23 19:47:07 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/03/24 17:42:48 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,3 @@ int	ft_atoi2(const char *str)
 		ft_error_limit_numbers();
 	return (res * sign);
 }
-

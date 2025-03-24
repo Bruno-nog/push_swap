@@ -6,7 +6,7 @@
 #    By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/14 16:11:07 by brunogue          #+#    #+#              #
-#    Updated: 2025/03/23 19:30:53 by brunogue         ###   ########.fr        #
+#    Updated: 2025/03/24 13:56:43 by brunogue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ LIBFT = libft/
 INCLUDES_DIR = includes
 CPPFLAGS = $(addprefix -I,$(INCLUDES_DIR))
 # Arquivos fonte
-SRCS = srcs/main.c srcs/push_swap.c srcs/ft_process.c srcs/ft_operations.c srcs/ft_errors.c srcs/ft_add_back.c srcs/ft_stack_new.c srcs/ft_verify.c srcs/ft_checks.c
+SRCS = srcs/main.c srcs/push_swap.c srcs/ft_process.c srcs/operations.c srcs/operations2.c srcs/ft_errors.c srcs/ft_add_back.c srcs/ft_stack_new.c srcs/ft_verify.c srcs/ft_checks.c srcs/sort.c
 OBJ = $(SRCS:.c=.o)
 
 # Flags para incluir o diretório de cabeçalhos e linkar a libft

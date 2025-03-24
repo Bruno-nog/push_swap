@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 19:47:09 by brunogue          #+#    #+#             */
-/*   Updated: 2025/03/23 20:13:38 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/03/24 12:48:22 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,19 @@ void	ft_free(t_stack **lst)
 }
 
 void	ft_free_str(char **lst)
+{
+	char	*n1;
+
+	if (!lst)
+		return ;
+	while (*lst)
+	{
+		n1 = *lst;
+		lst++;
+		free(n1);
+	}
+	*lst = NULL;
+}
 
 void	ft_list_args(char **av, t_stack **a)
 {

@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   operations2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/14 17:23:36 by brunogue          #+#    #+#             */
-/*   Updated: 2025/03/24 17:45:10 by brunogue         ###   ########.fr       */
+/*   Created: 2025/03/24 13:53:10 by brunogue          #+#    #+#             */
+/*   Updated: 2025/03/24 15:13:48 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
+#include "push_swap.h"
 
-int	main(int ac, char **av)
-{
-	t_stack	*a;
+// void	ft_sa(t_stack *a, int i)
+// {
+// 	t_stack	*temp;
+// 	t_stack *next_temp;
 
-	a = ft_process(ac, av);
-	if (!a || ft_checkdup(a))
-	{
-		ft_free(&a);
-		ft_error_stack_dup();
-	}
-	if (!ft_checksorted(a))
-		ft_sort(&a);
-	ft_free(&a);
-	return (0);
-}
+// 	if (!*a || !(*a)->next)
+// 		return ;
+// 	temp = *a;
+// 	next_temp = (*a)->next;
+// 	*a = next_temp;
+// 	temp->next = (*a)->next;
+// 	(*a)->next = temp;
+// 	if (i == 0)
+// 		write (1, "sa\n", 3);
+// }
