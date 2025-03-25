@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 13:56:55 by brunogue          #+#    #+#             */
-/*   Updated: 2025/03/24 18:07:06 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/03/25 19:13:56 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,17 @@ t_stack	*ft_sort_a(t_stack **a, t_stack **b)
 		{
 			if (i == ft_case_rarb_a(*a, *b, temp->nbr))
 				i = ft_apply_rarb(a, b, temp->nbr, 'b');
-			else if 
+			else if (i == ft_rarrb_a(*a, *b, temp->nbr))
+				i = ft_apply_rarrb(a, b, temp->nbr, 'b');
+			else if (i == ft_rrarrb_a(*a, *b, temp->nbr))
+				i = ft_apply_rrarrb(a, b, temp->nbr, 'b');
+			else if (i == ft_rrarb_a(*a, *b, temp->nbr))
+				i = ft_apply_rrarb(a, b, temp->nbr, 'b');
+			else
+				temp = temp->next;
 		}
 	}
+	return (a);
 }
 
 t_stack	*ft_sort_b(t_stack **a)

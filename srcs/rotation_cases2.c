@@ -1,0 +1,57 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotation_cases2.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/25 17:31:59 by brunogue          #+#    #+#             */
+/*   Updated: 2025/03/25 17:42:42 by brunogue         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+
+int	ft_rarb_a(t_stack *a, t_stack *b, int c)
+{
+	int	i;
+
+	i = ft_find_node_a(a, c);
+	if (i < ft_find_index(b, c))
+		i = ft_find_index(b, c);
+	return (i);
+}
+
+int	ft_rrarrb_a(t_stack *a, t_stack *b, int c)
+{
+	int	i;
+
+	i = 0;
+	if (ft_find_node_a(a, c))
+		i = ft_lstsize(a) - ft_find_node_a(a, c);
+	if ((i < (ft_lstsize(b) - ft_find_index(b, c))) && ft_find_index(b, c))
+		i = ft_lstsize(b) - ft_find_index(b, c);
+	return (i);
+}
+
+int	ft_rarrb_a(t_stack *a, t_stack *b, int c)
+{
+	int	i;
+
+	i = 0;
+	if (ft_find_index(b, c))
+		i = ft_lstsize(b) - ft_find_index(b, c);
+	i = ft_find_node_a(a, c) + i;
+	return (i);
+}
+
+int	ft_rrarb_a(t_stack *a, t_stack *b, int c)
+{
+	int	i;
+
+	i = 0;
+	if (ft_find_node_a(a, c))
+		i = ft_lstsize(a) - ft_find_node_a(a, c);
+	i = ft_find_index(b, c) + i;
+	return (i);
+}

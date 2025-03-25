@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 16:09:15 by brunogue          #+#    #+#             */
-/*   Updated: 2025/03/24 13:32:55 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/03/25 17:37:49 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,11 @@ void	ft_ra(t_stack **a, int i);
 void	ft_rb(t_stack **b, int i);
 void	ft_rr(t_stack **a, t_stack **b, int i);
 void	ft_sa(t_stack *a, int i);
+
+//ROTATIONS CASES
+int	ft_rarb(t_stack *a, t_stack *b, int c);
+int	ft_rrarrb(t_stack *a, t_stack *b, int c);
+int	ft_rrarb(t_stack *a, t_stack *b, int c);
+int	ft_rarrb(t_stack *a, t_stack *b, int c);
 
 #endif
