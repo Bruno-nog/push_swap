@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 13:56:55 by brunogue          #+#    #+#             */
-/*   Updated: 2025/03/25 19:13:56 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/03/27 13:54:28 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,63 @@ void	ft_sort(t_stack **a)
 	{
 		b = ft_sort_b(a);
 		a = ft_sort_a(a, &b);
-		i = 
+		i = ft_find_index(*a, ft_min_number(*a));
+		if (i < ft_lstsize((*a) - i)
+		{
+			while ((*a)->nbr != ft_min_number(*a))
+				ft_ra(a, 0);
+		}
+		else
+		{
+			while ((*a)->nbr != ft_min_number(*a))
+				ft_rra(a, 0);
+		}
+	}
+}
+
+void	ft_sort_b_3(t_stack **a, t_stack **b)
+{
+	int		i;
+	s_stack	*temp;
+	
+	while (ft_lstsize(*a) > 3 && !ft_checksorted(*a))
+	{
+		temp = *a;
+		i = ft_rotate_type_ab(*a, *b);
+		while (i >= 0)
+		{
+			if (i == ft_case_rarb(*a, *b, temp_nbr))
+				i = ft_apply_rarb(a, b, temp->nbr, 'a');
+			else if (i == ft_case_rrarrb(*a, *b, temp->nbr))
+				i = ft_apply_rrarrb(a, b, temp->nbr, 'a');
+			else if (i == ft_rarrb(*a, *b, temp->nbr))
+				i = ft_apply_rarrb(a, b, temp->nbr, 'a');
+			else if (i == ft_rrarb(*a, *B, temp->nbr))
+				i = ft_apply_rrarb(a, b, temp->nbr, 'a');
+			else
+				temp = temp->next;
+		}
+	}
+}
+
+void	ft_sort_three(t_stack **a)
+{
+	if (ft_min_number(*a) == (*a)->nbr)
+	{
+		ft_rra(a, 0);
+		ft_sa(a, 0);
+	}
+	else if (ft_max_number(*a) == (*a)->nbr)
+	{
+		ft_ra(a, 0);
+		if (!ft_checksorted(*a))
+			ft_sa(a, 0);
+	}
+	else
+	{
+		if (ft_find_index(*a, ft_max_number(*a) == 1))
+			ft_rra(a, 0);
+		else
+			ft_sa(a, 0);
 	}
 }

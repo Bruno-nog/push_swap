@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 16:09:15 by brunogue          #+#    #+#             */
-/*   Updated: 2025/03/25 17:37:49 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/03/27 14:54:53 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,27 @@ typedef struct s_stack_node
 	struct s_stack	*prev;
 }	t_stack;
 
-t_stack	*ft_process(int ac, char **av);
-t_stack	*ft_subprocess(char **av);
-int	ft_atoi2(const char *str);
-
-
 t_stack	*ft_stack_new(int content);
 void    ft_add_back(t_stack **stack, t_stack *stack_new);
+
+//OPERATIONS
+void	ft_pa(t_stack **a, t_stack **b, int i);
+void	ft_pb(t_stack **a, t_stack **b, int i);
+void	ft_ra(t_stack **a, int i);
+void	ft_rb(t_stack **b, int i);
+void	ft_rr(t_stack **a, t_stack **b, int i);
+void	ft_sa(t_stack **a, int i);
+
+//SORT
+t_stack	*ft_sort_a(t_stack **a, t_stack **b);
+t_stack	*ft_sort_b(t_stack **a);
+void	ft_sort(t_stack **a);
+void	ft_sort_b_3(t_stack **a, t_stack **b);
+void	ft_sort_three(t_stack **a);
+
+//PROCESS
+t_stack	*ft_process(int ac, char **av);
+t_stack	*ft_subprocess(char **av);
 
 //ERRORS
 void	ft_error_digit(void);
@@ -50,18 +64,13 @@ t_stack	*ft_parse_args_quoted(char **av);
 t_stack	*ft_parse(int ac, char **av);
 void	ft_free_str(char **lst);
 
-//OPERATIONS
-void	ft_pa(t_stack **a, t_stack **b, int i);
-void	ft_pb(t_stack **a, t_stack **b, int i);
-void	ft_ra(t_stack **a, int i);
-void	ft_rb(t_stack **b, int i);
-void	ft_rr(t_stack **a, t_stack **b, int i);
-void	ft_sa(t_stack *a, int i);
-
 //ROTATIONS CASES
 int	ft_rarb(t_stack *a, t_stack *b, int c);
 int	ft_rrarrb(t_stack *a, t_stack *b, int c);
 int	ft_rrarb(t_stack *a, t_stack *b, int c);
 int	ft_rarrb(t_stack *a, t_stack *b, int c);
+
+//UTILS
+int	ft_atoi2(const char *str);
 
 #endif

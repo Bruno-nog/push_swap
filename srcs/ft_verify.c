@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 16:37:59 by brunogue          #+#    #+#             */
-/*   Updated: 2025/03/23 18:33:28 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/03/27 12:21:41 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	is_sorted(t_stack *a)
 	return (1);
 }
 
-int	ft_find_max(t_stack *stack)
+int	ft_min_number(t_stack *stack)
 {
 	int	min;
 
@@ -41,7 +41,7 @@ int	ft_find_max(t_stack *stack)
 	return (min);
 }
 
-int	ft_find_max(t_stack *stack)
+int	ft_max_number(t_stack *stack)
 {
 	int	max;
 	
