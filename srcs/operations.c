@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 18:15:40 by brunogue          #+#    #+#             */
-/*   Updated: 2025/03/25 18:13:48 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/03/28 17:53:02 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_ra(t_stack **a, int i)
 	if (!*a || !(*a)->next)
 		return ;
 	temp = *a;
-	*a = ft_lstlast(*a);
+	*a = ft_stack_last(*a);
 	(*a)->next = temp;
 	*a = temp->next;
 	if (i == 0)
@@ -61,7 +61,7 @@ void	ft_rb(t_stack **b, int i)
 	if (!*b || !(*b)->next)
 		return ;
 	temp = *b;
-	*b = ft_lstlast(*b);
+	*b = ft_stack_last(*b);
 	(*b)->next = temp;
 	*b = temp->next;
 	temp->next = NULL;
@@ -71,8 +71,8 @@ void	ft_rb(t_stack **b, int i)
 
 void	ft_rr(t_stack **a, t_stack **b, int i)
 {
-	ra(a, 1);
-	rb(b, 1);
+	ft_ra(a, 1);
+	ft_rb(b, 1);
 	if (i == 0)
 		write (1, "rr\n", 3);
 }

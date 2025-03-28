@@ -6,13 +6,13 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 13:56:55 by brunogue          #+#    #+#             */
-/*   Updated: 2025/03/27 13:54:28 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/03/28 19:24:19 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*ft_sort_a(t_stack **a, t_stack **b)
+t_stack	**ft_sort_a(t_stack **a, t_stack **b)
 {
 	int		i;
 	t_stack	*temp;
@@ -43,15 +43,15 @@ t_stack	*ft_sort_b(t_stack **a)
 	t_stack	*b;
 
 	b = NULL;
-	if (ft_lstsize(*a) > 3 && !ft_checksorted(*a))
+	if (ft_stack_size(*a) > 3 && !ft_checksorted(*a))
 		ft_pb(a, &b, 0);
-	if (ft_lstsize(*a) > 3 && !ft_checksorted(*a))
+	if (ft_stack_size(*a) > 3 && !ft_checksorted(*a))
 		ft_pb(a, &b, 0);
-	if (ft_lstsize(*a) > 3 && !ft_checksorted(*a))
-		ft_sort_b_till_3(a, &b);
+	if (ft_stack_size(*a) > 3 && !ft_checksorted(*a))
+		ft_sort_b_3(a, &b);
 	if (!ft_checksorted(*a))
 		ft_sort_three(a);
-	return (b).
+	return (b);
 }
 
 void	ft_sort(t_stack **a)
@@ -60,14 +60,14 @@ void	ft_sort(t_stack **a)
 	int		i;
 
 	b = NULL;
-	if (ft_lstsize(*a) == 2)
+	if (ft_stack_size(*a) == 2)
 		ft_sa(a, 0);
 	else
 	{
 		b = ft_sort_b(a);
 		a = ft_sort_a(a, &b);
 		i = ft_find_index(*a, ft_min_number(*a));
-		if (i < ft_lstsize((*a) - i)
+		if (i < ft_stack_size(*a) - i)
 		{
 			while ((*a)->nbr != ft_min_number(*a))
 				ft_ra(a, 0);
@@ -83,21 +83,21 @@ void	ft_sort(t_stack **a)
 void	ft_sort_b_3(t_stack **a, t_stack **b)
 {
 	int		i;
-	s_stack	*temp;
+	t_stack	*temp;
 	
-	while (ft_lstsize(*a) > 3 && !ft_checksorted(*a))
+	while (ft_stack_size(*a) > 3 && !ft_checksorted(*a))
 	{
 		temp = *a;
 		i = ft_rotate_type_ab(*a, *b);
 		while (i >= 0)
 		{
-			if (i == ft_case_rarb(*a, *b, temp_nbr))
+			if (i == ft_rarb(*a, *b, temp->nbr))
 				i = ft_apply_rarb(a, b, temp->nbr, 'a');
-			else if (i == ft_case_rrarrb(*a, *b, temp->nbr))
+			else if (i == ft_rrarrb(*a, *b, temp->nbr))
 				i = ft_apply_rrarrb(a, b, temp->nbr, 'a');
 			else if (i == ft_rarrb(*a, *b, temp->nbr))
 				i = ft_apply_rarrb(a, b, temp->nbr, 'a');
-			else if (i == ft_rrarb(*a, *B, temp->nbr))
+			else if (i == ft_rrarb(*a, *b, temp->nbr))
 				i = ft_apply_rrarb(a, b, temp->nbr, 'a');
 			else
 				temp = temp->next;

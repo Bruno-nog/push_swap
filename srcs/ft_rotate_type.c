@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 18:16:30 by brunogue          #+#    #+#             */
-/*   Updated: 2025/03/25 17:40:49 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/03/28 20:12:39 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,23 +22,23 @@ int	ft_case_rarb_a(t_stack *a, t_stack *b, int c)
 	return (i);
 }
 
-ft_rotate_type_ba(t_stack *a, t_stack *b)
+int	ft_rotate_type_ba(t_stack *a, t_stack *b)
 {
 	int		i;
 	t_stack	*temp;
 
 	temp = b;
-	i = ft_case_rrarrb_a(a, b, b->nbr);
+	i = ft_rrarrb_a(a, b, b->nbr);
 	while (temp)
 	{
-		if (i > ft_case_rarb_a(a, b, temp->nbr))
-			i = ft_case_rarb_a(a, b, temp->nbr);
-		if (i > ft_case_rrarrb_a(a, b temp->nbr))
-			i = ft_case_rrarrb_a(a, b, temp->nbr);
-		if (i > ft_case_rarrb_a(a, b, temp->nbr))
-			i = ft_case_rarrb_a(a, b, temp->nbr);
-		if (i > ft_case_rrarb_a(a, b, temp->nbr))
-			i = ft_case_rrarb_a(a, b, temp->nbr);
+		if (i > ft_rarb_a(a, b, temp->nbr))
+			i = ft_rarb_a(a, b, temp->nbr);
+		if (i > ft_rrarrb_a(a, b, temp->nbr))
+			i = ft_rrarrb_a(a, b, temp->nbr);
+		if (i > ft_rarrb_a(a, b, temp->nbr))
+			i = ft_rarrb_a(a, b, temp->nbr);
+		if (i > ft_rrarb_a(a, b, temp->nbr))
+			i = ft_rrarb_a(a, b, temp->nbr);
 		temp = temp->next;
 	}
 	return (i);
@@ -50,17 +50,17 @@ int	ft_rotate_type_ab(t_stack *a, t_stack *b)
 	t_stack	*temp;
 
 	temp = a;
-	i = ft_case_rrarrb(a, b, a->nbr);
+	i = ft_rrarrb(a, b, a->nbr);
 	while (temp)
 	{
-		if (i > ft_case_rarb(a, b, temp->nbr))
-			i = ft_case_rarb(a, b, temp->nbr);
-		if (i > ft_case_rrarrb(a, b, temp->next))
-			i = ft_case_rrarrb(a, b, temp->next);
-		if (i > ft_case_rarrb(a, b, temp->nbr))
-			i = ft_case_rarrb(a, b, temp->nbr);
-		if (i > ft_case_rrarb(a, b, temp->nbr))
-			i = ft_case_rrarb(a, b, temp->nbr);
+		if (i > ft_rarb(a, b, temp->nbr))
+			i = ft_rarb(a, b, temp->nbr);
+		if (i > ft_rrarrb(a, b, temp->nbr))
+			i = ft_rrarrb(a, b, temp->nbr);
+		if (i > ft_rarrb(a, b, temp->nbr))
+			i = ft_rarrb(a, b, temp->nbr);
+		if (i > ft_rrarb(a, b, temp->nbr))
+			i = ft_rrarb(a, b, temp->nbr);
 		temp = temp->next;
 	}
 	return (i);

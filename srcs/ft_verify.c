@@ -6,12 +6,12 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 16:37:59 by brunogue          #+#    #+#             */
-/*   Updated: 2025/03/27 12:21:41 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/03/28 17:37:12 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+/*
 int	is_sorted(t_stack *a)
 {
 	t_stack	*current;
@@ -24,34 +24,32 @@ int	is_sorted(t_stack *a)
 		current = current->next;
 	}
 	return (1);
+}*/
+
+int	ft_min_number(t_stack *a)
+{
+	int		i;
+
+	i = a->nbr;
+	while (a)
+	{
+		if (a->nbr < i)
+			i = a->nbr;
+		a = a->next;
+	}
+	return (i);
 }
 
-int	ft_min_number(t_stack *stack)
+int	ft_max_number(t_stack *a)
 {
-	int	min;
+	int		i;
 
-	min = INT_MAX;
-	t_stack	*current = stack->top;
-	while (current)
+	i = a->nbr;
+	while (a)
 	{
-		if (current->value < min)
-			min = current->value;
-		current = current->next;
+		if (a->nbr > i)
+			i = a->nbr;
+		a = a->next;
 	}
-	return (min);
-}
-
-int	ft_max_number(t_stack *stack)
-{
-	int	max;
-	
-	max = INT_MAX;
-	t_stack	*current = stack->top;
-	while (current)
-	{
-		if (current->value > max)
-			max = current->value;
-		current = current->next;
-	}
-	return (max);
+	return (i);
 }

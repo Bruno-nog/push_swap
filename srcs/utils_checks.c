@@ -1,23 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_add_back.c                                      :+:      :+:    :+:   */
+/*   utils_checks.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/23 15:32:23 by brunogue          #+#    #+#             */
-/*   Updated: 2025/03/28 17:27:10 by brunogue         ###   ########.fr       */
+/*   Created: 2025/03/28 17:56:22 by brunogue          #+#    #+#             */
+/*   Updated: 2025/03/28 17:58:55 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    ft_add_back(t_stack **stack, t_stack *stack_new)
+int	sign(int c)
 {
-	if (!stack)
-		return ;
-	if (!*stack)
-		*stack = stack_new;
-	else
-		(ft_stack_last(*stack))->next = stack_new;
+	if (c == '+' || c == '-')
+		return (1);
+	return (0);
+}
+
+//check if the character is digit
+int	digit(int c)
+{
+	if ((c >= 48) && (c <= 57))
+		return (1);
+	return (0);
+}
+
+//check if character is space character
+int	space(int c)
+{
+	if (c == ' ')
+		return (1);
+	return (0);
 }

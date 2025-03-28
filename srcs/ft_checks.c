@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 19:21:07 by brunogue          #+#    #+#             */
-/*   Updated: 2025/03/27 19:28:04 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/03/28 17:53:42 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,12 @@ void	checkalpha(char **av)
 	int	j;
 
 	i = 1;
-	while (argv[i])
+	while (av[i])
 	{
 		j = 0;
-		while ((argv[i][j]) != '\0')
+		while ((av[i][j]) != '\0')
 		{
-			if (ft_isalpha(argv[i][j]))
+			if (ft_isalpha(av[i][j]))
 				ft_error_digit();
 			j++;
 		}
@@ -67,8 +67,35 @@ void	checkalpha(char **av)
 int	checkargs(char **argv)
 {
 	checkalpha(argv);
-	if (!checkerror(argv, 1, 0))
-		return (false);
-	return (true);
+	if (!checkargs_syntax(argv, 1, 0))
+		return (0);
+	return (1);
 }
 
+int	checkargs_syntax(char **av, int i, int x)
+{
+	while (av[i])
+	{
+		x = 0;
+		while (av[i][x] != '\0')
+		{
+			if (sign(av[i][x]))
+			{
+				x++;
+				if (!digit(av[i][x]))
+					return (0);
+			}
+			else if (digit(av[i][x]))
+			{
+				x++;
+				if (av[i][x] == '\0')
+					break ;
+				if (!digit(av[i][x]) && !space(av[i][x]))
+					return (0);
+			}
+			x++;
+		}
+		i++;
+	}
+	return (1);
+}
