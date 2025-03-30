@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 18:15:40 by brunogue          #+#    #+#             */
-/*   Updated: 2025/03/28 17:53:02 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/03/30 19:14:02 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ void	ft_pa(t_stack **a, t_stack **b, int i)
 {
 	t_stack	*temp;
 
-	if (!*a)
+	if (!*b)
 		return ;
 	temp = *a;
 	*a = *b;
-	*a = (*a)->next;
-	*b = temp->next;
+	*b = (*b)->next;
+	(*a)->next = temp;
 	if (i == 0)
 		write (1, "pa\n", 3);
 }
@@ -50,8 +50,9 @@ void	ft_ra(t_stack **a, int i)
 	*a = ft_stack_last(*a);
 	(*a)->next = temp;
 	*a = temp->next;
+	temp->next = NULL;
 	if (i == 0)
-		write (1, "ra\n", 3);
+		write(1, "ra\n", 3);
 }
 
 void	ft_rb(t_stack **b, int i)
@@ -69,10 +70,22 @@ void	ft_rb(t_stack **b, int i)
 		write (1, "rb\n", 3);
 }
 
-void	ft_rr(t_stack **a, t_stack **b, int i)
+void	ft_rr(t_stack **a, t_stack **b, int j)
 {
-	ft_ra(a, 1);
-	ft_rb(b, 1);
-	if (i == 0)
-		write (1, "rr\n", 3);
+	t_stack	*temp;
+
+	if (!*a || !((*a)->next) || !*b || !((*b)->next))
+		return ;
+	temp = *a;
+	*a = ft_stack_last(*a);
+	(*a)->next = temp;
+	*a = temp->next;
+	temp->next = NULL;
+	temp = *b;
+	*b = ft_stack_last(*b);
+	(*b)->next = temp;
+	*b = temp->next;
+	temp->next = NULL;
+	if (j == 0)
+		write(1, "rr\n", 3);
 }

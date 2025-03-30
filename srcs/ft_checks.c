@@ -5,17 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/23 19:21:07 by brunogue          #+#    #+#             */
-/*   Updated: 2025/03/28 17:53:42 by brunogue         ###   ########.fr       */
+/*   Created: 2025/03/30 15:42:29 by brunogue          #+#    #+#             */
+/*   Updated: 2025/03/30 16:36:48 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.c"
+#include "push_swap.h"
 
 int	ft_checkdup(t_stack *a)
 {
 	t_stack	*temp;
-	
+
 	while (a)
 	{
 		temp = a->next;
@@ -23,7 +23,7 @@ int	ft_checkdup(t_stack *a)
 		{
 			if (a->nbr == temp->nbr)
 				return (1);
-			temp = temp->next;	
+			temp = temp->next;
 		}
 		a = a->next;
 	}

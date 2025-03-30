@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/24 13:56:55 by brunogue          #+#    #+#             */
-/*   Updated: 2025/03/28 19:24:19 by brunogue         ###   ########.fr       */
+/*   Created: 2025/03/30 15:45:42 by brunogue          #+#    #+#             */
+/*   Updated: 2025/03/30 17:31:15 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_stack	**ft_sort_a(t_stack **a, t_stack **b)
 		i = ft_rotate_type_ba(*a, *b);
 		while (i >= 0)
 		{
-			if (i == ft_case_rarb_a(*a, *b, temp->nbr))
+			if (i == ft_rarb_a(*a, *b, temp->nbr))
 				i = ft_apply_rarb(a, b, temp->nbr, 'b');
 			else if (i == ft_rarrb_a(*a, *b, temp->nbr))
 				i = ft_apply_rarrb(a, b, temp->nbr, 'b');
@@ -83,24 +83,24 @@ void	ft_sort(t_stack **a)
 void	ft_sort_b_3(t_stack **a, t_stack **b)
 {
 	int		i;
-	t_stack	*temp;
-	
+	t_stack	*tmp;
+
 	while (ft_stack_size(*a) > 3 && !ft_checksorted(*a))
 	{
-		temp = *a;
+		tmp = *a;
 		i = ft_rotate_type_ab(*a, *b);
 		while (i >= 0)
 		{
-			if (i == ft_rarb(*a, *b, temp->nbr))
-				i = ft_apply_rarb(a, b, temp->nbr, 'a');
-			else if (i == ft_rrarrb(*a, *b, temp->nbr))
-				i = ft_apply_rrarrb(a, b, temp->nbr, 'a');
-			else if (i == ft_rarrb(*a, *b, temp->nbr))
-				i = ft_apply_rarrb(a, b, temp->nbr, 'a');
-			else if (i == ft_rrarb(*a, *b, temp->nbr))
-				i = ft_apply_rrarb(a, b, temp->nbr, 'a');
+			if (i == ft_rarb(*a, *b, tmp->nbr))
+				i = ft_apply_rarb(a, b, tmp->nbr, 'a');
+			else if (i == ft_rrarrb(*a, *b, tmp->nbr))
+				i = ft_apply_rrarrb(a, b, tmp->nbr, 'a');
+			else if (i == ft_rarrb(*a, *b, tmp->nbr))
+				i = ft_apply_rarrb(a, b, tmp->nbr, 'a');
+			else if (i == ft_rrarb(*a, *b, tmp->nbr))
+				i = ft_apply_rrarb(a, b, tmp->nbr, 'a');
 			else
-				temp = temp->next;
+				tmp = tmp->next;
 		}
 	}
 }
@@ -120,7 +120,7 @@ void	ft_sort_three(t_stack **a)
 	}
 	else
 	{
-		if (ft_find_index(*a, ft_max_number(*a) == 1))
+		if (ft_find_index(*a, ft_max_number(*a)) == 1)
 			ft_rra(a, 0);
 		else
 			ft_sa(a, 0);

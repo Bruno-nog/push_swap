@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/25 16:46:23 by brunogue          #+#    #+#             */
-/*   Updated: 2025/03/28 18:56:54 by brunogue         ###   ########.fr       */
+/*   Created: 2025/03/30 15:45:39 by brunogue          #+#    #+#             */
+/*   Updated: 2025/03/30 18:55:54 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_rrarrb(t_stack *a, t_stack *b, int c)
 	int	i;
 
 	i = 0;
-	if (ft_find_node_b(a, c))
+	if (ft_find_node_b(b, c))
 		i = ft_stack_size(b) - ft_find_node_b(b, c);
 	if ((i < (ft_stack_size(a) - ft_find_index(a, c))) && ft_find_index(a, c))
 		i = ft_stack_size(a) - ft_find_index(a, c);

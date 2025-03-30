@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free&parse.c                                    :+:      :+:    :+:   */
+/*   ft_free_parse.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/23 19:47:09 by brunogue          #+#    #+#             */
-/*   Updated: 2025/03/27 13:40:40 by brunogue         ###   ########.fr       */
+/*   Created: 2025/03/30 15:44:58 by brunogue          #+#    #+#             */
+/*   Updated: 2025/03/30 18:53:57 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_free(t_stack **lst)
 {
 	t_stack	*temp;
 
-	if (*lst)
+	if (!lst)
 		return ;
 	while (*lst)
 	{
@@ -64,7 +64,7 @@ t_stack	*ft_parse_args_quoted(char **av)
 	ft_list_args(temp, &a);
 	ft_free_str(temp);
 	free(temp);
-	return (a);	
+	return (a);
 }
 
 t_stack	*ft_parse(int ac, char **av)

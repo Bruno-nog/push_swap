@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/23 19:02:39 by brunogue          #+#    #+#             */
-/*   Updated: 2025/03/28 19:11:55 by brunogue         ###   ########.fr       */
+/*   Created: 2025/03/30 15:45:47 by brunogue          #+#    #+#             */
+/*   Updated: 2025/03/30 18:57:01 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,34 @@ int	ft_stack_size(t_stack *lst)
 	{
 		temp = temp->next;
 		i++;
+	}
+	return (i);
+}
+
+int	ft_min_number(t_stack *a)
+{
+	int		i;
+
+	i = a->nbr;
+	while (a)
+	{
+		if (a->nbr < i)
+			i = a->nbr;
+		a = a->next;
+	}
+	return (i);
+}
+
+int	ft_max_number(t_stack *a)
+{
+	int		i;
+
+	i = a->nbr;
+	while (a)
+	{
+		if (a->nbr > i)
+			i = a->nbr;
+		a = a->next;
 	}
 	return (i);
 }

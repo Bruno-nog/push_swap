@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 13:53:10 by brunogue          #+#    #+#             */
-/*   Updated: 2025/03/27 14:54:43 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/03/30 19:13:54 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_sa(t_stack **a, int i)
 {
 	t_stack	*temp;
-	t_stack *next_temp;
+	t_stack	*next_temp;
 
 	if (!*a || !(*a)->next)
 		return ;
@@ -31,7 +31,7 @@ void	ft_sa(t_stack **a, int i)
 void	ft_sb(t_stack **b, int i)
 {
 	t_stack	*temp;
-	
+
 	if (!*b || !((*b)->next))
 		return ;
 	temp = *b;
@@ -44,44 +44,18 @@ void	ft_sb(t_stack **b, int i)
 
 void	ft_ss(t_stack **a, t_stack **b, int i)
 {
-	ft_sa(a, 1);
-	ft_sb(b, 1);
+	t_stack	*temp;
+
+	if (!*a || !((*a)->next) || !*b || !((*b)->next))
+		return ;
+	temp = *a;
+	*a = (*a)->next;
+	temp->next = (*a)->next;
+	(*a)->next = temp;
+	temp = *b;
+	*b = (*b)->next;
+	temp->next = (*b)->next;
+	(*b)->next = temp;
 	if (i == 0)
 		write(1, "ss\n", 3);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// void	ft_ss(t_stack **a, t_stack **b, int i)
-// {
-// 	t_stack	*temp;
-	
-// 	if (!*a || !((*a)->next) || !*b || ! ((*b)->next))
-// 		return ;
-// 	temp = *a;
-// 	*a = (*a)->next;
-// 	temp->next = (*a)->next;
-// 	(*a)->next = temp;
-// 	temp = *b;
-// 	*b = (*b)->next;
-// 	temp->next = (*b)->next;
-// 	(*b)->next = temp;
-// 	if (i == 0)
-// 		write(!, "ss\n", 3);
-// }
-

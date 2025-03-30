@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 14:52:20 by brunogue          #+#    #+#             */
-/*   Updated: 2025/03/28 20:23:14 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/03/30 19:14:16 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void	ft_rrr(t_stack **a, t_stack **b, int i)
 {
 	t_stack	*temp;
 	int		x;
-	
+
 	temp = *a;
 	x = 0;
 	while ((*a)->next)

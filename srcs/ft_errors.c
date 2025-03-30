@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/23 17:31:31 by brunogue          #+#    #+#             */
-/*   Updated: 2025/03/23 20:05:15 by brunogue         ###   ########.fr       */
+/*   Created: 2025/03/30 15:44:51 by brunogue          #+#    #+#             */
+/*   Updated: 2025/03/30 18:53:21 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,15 @@ void	ft_error_arg(void)
 	write (2, "Error of usage: ./exec [numbers]\n", 33);
 	exit(1);
 }
+
 void	ft_error_stack_dup(void)
 {
 	write (2, "Duplicate stack or something failed in a stack\n", 33);
+	exit(1);
+}
+
+void	ft_error_memory(void)
+{
+	write (2, "Memory usage error\n", 19);
 	exit(1);
 }

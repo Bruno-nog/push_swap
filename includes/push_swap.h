@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 16:09:15 by brunogue          #+#    #+#             */
-/*   Updated: 2025/03/28 20:23:02 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/03/30 18:52:03 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ typedef struct s_stack
 }	t_stack;
 
 t_stack	*ft_stack_new(int content);
-void    ft_add_back(t_stack **stack, t_stack *stack_new);
 
 //OPERATIONS
 void	ft_pa(t_stack **a, t_stack **b, int i);
@@ -61,6 +60,7 @@ void	ft_error_digit(void);
 void	ft_error_limit_numbers(void);
 void	ft_error_arg(void);
 void	ft_error_stack_dup(void);
+void	ft_error_memory(void);
 
 //CHECKS
 int		ft_checkdup(t_stack *a);
@@ -77,46 +77,44 @@ t_stack	*ft_parse_args_quoted(char **av);
 t_stack	*ft_parse(int ac, char **av);
 
 //ROTATIONS_CASES
-int	ft_rarb(t_stack *a, t_stack *b, int c);
-int	ft_rrarrb(t_stack *a, t_stack *b, int c);
-int	ft_rrarb(t_stack *a, t_stack *b, int c);
-int	ft_rarrb(t_stack *a, t_stack *b, int c);
+int		ft_rarb(t_stack *a, t_stack *b, int c);
+int		ft_rrarrb(t_stack *a, t_stack *b, int c);
+int		ft_rrarb(t_stack *a, t_stack *b, int c);
+int		ft_rarrb(t_stack *a, t_stack *b, int c);
 
 //ROTATIONS_CASES2
-int	ft_rarb_a(t_stack *a, t_stack *b, int c);
-int	ft_rrarrb_a(t_stack *a, t_stack *b, int c);
-int	ft_rarrb_a(t_stack *a, t_stack *b, int c);
-int	ft_rrarb_a(t_stack *a, t_stack *b, int c);
+int		ft_rarb_a(t_stack *a, t_stack *b, int c);
+int		ft_rrarrb_a(t_stack *a, t_stack *b, int c);
+int		ft_rarrb_a(t_stack *a, t_stack *b, int c);
+int		ft_rrarb_a(t_stack *a, t_stack *b, int c);
 
 //ROTATE_APPLY
-int	ft_apply_rarrb(t_stack **a, t_stack **b, int c, char s);
-int	ft_apply_rarb(t_stack **a, t_stack **b, int c, char s);
-int	ft_apply_rrarrb(t_stack **a, t_stack **b, int c, char s);
-int	ft_apply_rrarb(t_stack **a, t_stack **b, int c, char s);
-int	ft_apply_rarrb(t_stack **a, t_stack **b, int c, char s);
+int		ft_apply_rarrb(t_stack **a, t_stack **b, int c, char s);
+int		ft_apply_rarb(t_stack **a, t_stack **b, int c, char s);
+int		ft_apply_rrarrb(t_stack **a, t_stack **b, int c, char s);
+int		ft_apply_rrarb(t_stack **a, t_stack **b, int c, char s);
+int		ft_apply_rarrb(t_stack **a, t_stack **b, int c, char s);
 
 //ROTATE_TYPE
-int	ft_case_rarb_a(t_stack *a, t_stack *b, int c);
-int	ft_rotate_type_ba(t_stack *a, t_stack *b);
-int	ft_rotate_type_ab(t_stack *a, t_stack *b);
+int		ft_rarb_a(t_stack *a, t_stack *b, int c);
+int		ft_rotate_type_ba(t_stack *a, t_stack *b);
+int		ft_rotate_type_ab(t_stack *a, t_stack *b);
 
 //STACK_POSITIONING
-int	ft_find_index(t_stack *a, int nbr);
-int	ft_find_node_a(t_stack *a, int push_number);
-int	ft_find_node_b(t_stack *b, int push_number);
-
-//VERIFY
-int	ft_min_number(t_stack *a);
-int	ft_max_number(t_stack *a);
+int		ft_find_index(t_stack *a, int nbr);
+int		ft_find_node_a(t_stack *a, int push_number);
+int		ft_find_node_b(t_stack *b, int push_number);
+void	ft_add_back(t_stack **stack, t_stack *stack_new);
 
 //UTILS
-int	ft_atoi2(const char *str);
+int		ft_atoi2(const char *str);
 t_stack	*ft_stack_last(t_stack *lst);
-int	ft_stack_size(t_stack *lst);
-int	ft_find_index(t_stack *a, int nbr);
+int		ft_stack_size(t_stack *lst);
+int		ft_min_number(t_stack *a);
+int		ft_max_number(t_stack *a);
 //UTILS_CHECKS
-int	sign(int c);
-int	digit(int c);
-int	space(int c);
+int		sign(int c);
+int		digit(int c);
+int		space(int c);
 
 #endif

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/22 17:59:32 by brunogue          #+#    #+#             */
-/*   Updated: 2025/03/24 13:00:05 by brunogue         ###   ########.fr       */
+/*   Created: 2025/03/30 15:45:09 by brunogue          #+#    #+#             */
+/*   Updated: 2025/03/30 18:54:16 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_stack	*ft_subprocess(char **av)
 	char	**temp;
 	int		i;
 	int		j;
-	
+
 	a = NULL;
 	i = 0;
 	temp = ft_split(av[1], ' ');
