@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/30 15:42:29 by brunogue          #+#    #+#             */
-/*   Updated: 2025/03/30 16:36:48 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/04/02 17:30:50 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,14 +60,13 @@ void	checkalpha(char **av)
 				ft_error_digit();
 			j++;
 		}
-		i++;
 	}
 }
 
-int	checkargs(char **argv)
+int	checkargs(char **av)
 {
-	checkalpha(argv);
-	if (!checkargs_syntax(argv, 1, 0))
+	checkalpha(av);
+	if (!checkargs_syntax(av, 1, 0))
 		return (0);
 	return (1);
 }

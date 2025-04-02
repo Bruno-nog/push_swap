@@ -6,14 +6,14 @@
 #    By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/14 16:11:07 by brunogue          #+#    #+#              #
-#    Updated: 2025/03/30 14:25:32 by brunogue         ###   ########.fr        #
+#    Updated: 2025/04/02 15:02:46 by brunogue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CC = cc
 RM = rm -f
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -g -Wall -Wextra -Werror
 LIBFT = libft/
 
 INCLUDES_DIR = includes

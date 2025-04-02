@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/30 15:45:47 by brunogue          #+#    #+#             */
-/*   Updated: 2025/03/30 18:57:01 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/04/02 17:55:58 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,17 @@
 
 int	ft_atoi2(const char *str)
 {
-	int				sign;
-	long long int	res;
+	int				mod;
+	long long int	i;
 
-	res = 0;
-	sign = 1;
-	while (*str == ' ' || (*str >= 9 && *str <= 13))
+	i = 0;
+	mod = 1;
+	while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\f'
+		|| *str == '\v' || *str == '\r')
 		str++;
 	if (*str == '-')
 	{
-		sign = -1;
+		mod = -1;
 		str++;
 	}
 	else if (*str == '+')
@@ -32,12 +33,12 @@ int	ft_atoi2(const char *str)
 	{
 		if (!ft_isdigit(*str))
 			ft_error_digit();
-		res = res * 10 + (*str - '0');
+		i = i * 10 + (*str - 48);
 		str++;
 	}
-	if ((res * sign) > 2147483647 || (res * sign) < -2147483648)
-		ft_error_limit_numbers();
-	return (res * sign);
+	if ((mod * i) > 2147483647 || (mod * i) < -2147483648)
+		ft_error_digit();
+	return (mod * i);
 }
 
 t_stack	*ft_stack_last(t_stack *lst)

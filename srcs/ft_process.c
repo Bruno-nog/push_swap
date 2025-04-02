@@ -6,7 +6,7 @@
 /*   By: brunogue <brunogue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/30 15:45:09 by brunogue          #+#    #+#             */
-/*   Updated: 2025/03/30 18:54:16 by brunogue         ###   ########.fr       */
+/*   Updated: 2025/04/02 17:56:21 by brunogue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_stack	*ft_subprocess(char **av)
 
 	a = NULL;
 	i = 0;
-	temp = ft_split(av[1], ' ');
+	temp = ft_split(av[1], 32);
 	while (temp[i])
 	{
 		j = ft_atoi2(temp[i]);
